@@ -1,4 +1,4 @@
 [context.deploy-preview.environment]
-    NODE_VERSION = 8.6.0
+    NODE_VERSION = 8.6
 [context.production.environment]
-    NODE_VERSION = 8.6.0
+    NODE_VERSION = 8.6
