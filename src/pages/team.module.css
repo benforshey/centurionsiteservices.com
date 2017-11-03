@@ -1,0 +1,41 @@
+.content {
+    margin: 1.45rem auto;
+    max-width: 49.090909091em;
+    padding: 0 4vw;
+}
+
+.masthead {
+    margin: 1.45em 0;
+    text-align: center;
+}
+
+.lede {
+    font-size: 1.125em;
+    margin: 0 auto 6em;
+    text-align: center;
+}
+
+.biography {
+    align-items: flex-start;
+    background: linear-gradient(rgba(255, 255, 255, .2), rgba(255, 255, 255, .2)), url(../images/ribbon.svg) center top / cover no-repeat;
+    margin-bottom: 6em;
+    padding: 2vw 0;
+}
+
+.title {
+    margin: 0;
+}
+
+.position {
+    font-style: italic;
+    margin-top: .25em;
+}
+
+.image {
+    border: 3px solid hsl(202, 100%, 49%);
+    border-radius: 50%;
+    float: left;
+    margin: 0 2vw 2vw -3vw;
+    shape-outside: circle(50%) margin-box;
+    width: 30%;
+}

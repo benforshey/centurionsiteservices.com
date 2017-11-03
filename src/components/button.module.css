@@ -1,0 +1,26 @@
+.button {
+    background: linear-gradient(hsl(54, 89%, 73%), hsl(49, 89%, 73%));
+    border-radius: 3px;
+    border: 1px solid #00A0FC;
+    box-shadow: 0 2px 1px 0 hsla(202, 100%, 49%, 50%);
+    color: #353535;
+    /* cursor: pointer; */
+    font-family: 'Work Sans', 'Gill Sans', 'Verdana', sans-serif;
+    font-weight: 700;
+    font-size: inherit;
+    line-height: inherit;
+    padding: .3em .5em .25em;
+    transition: background .2s ease-in-out, box-shadow .2s ease-in-out, transform .2s ease-in-out;
+}
+
+.button:hover,
+.button:focus {
+    box-shadow: 1px 3px 2px 0 hsla(202, 100%, 49%, .8);
+    transform: translateY(-1px);
+    outline: none;
+}
+
+.button:active {
+    box-shadow: 0 1px 0px 0 hsla(202, 100%, 49%, .5);
+    background: linear-gradient(hsl(49, 89%, 73%), hsl(54, 89%, 73%));
+}

@@ -1,0 +1,50 @@
+.content {
+    margin: 1.45rem auto;
+    max-width: 40.909090909em;
+    padding: 0 4vw;
+}
+
+.form {
+    margin: 0 auto 6em;
+    width: 100%;
+    transition: width .2s ease-out;
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-weight: 700;
+    font-size: .875em;
+}
+
+.input {
+    font-size: .875em;
+    border: none;
+    outline: 2px solid hsla(0, 0%, 21%, 50%);
+    padding: .25em;
+    font-family: inherit;
+    margin: .25em 0;
+    transition: outline .2s ease-out;
+}
+
+.input:active,
+.input:focus {
+    outline: 2px solid hsla(202, 100%, 49%, 50%);
+    outline-offset: 0px;
+    border: none;
+}
+
+@media screen and (min-width: 37.5em) {
+    .form {
+        width: 75%;
+    }
+}
+
+@media screen and (min-width: 50em) {
+    .form {
+        width: 50%;
+    }
+}
