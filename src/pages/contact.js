@@ -45,7 +45,7 @@ class Contact extends React.Component {
     e.preventDefault()
     e.stopPropagation()
 
-    fetch('https://centurionsiteservices.com/webhook/form-mail/', {
+    fetch('https://www.centurionsiteservices.com/webhook/form-mail/', {
       method: 'post',
       body: new FormData(e.target)
     })
@@ -82,7 +82,7 @@ class Contact extends React.Component {
         <h1 className={styles.masthead}>Pricing<br /> and <br />Inquiries</h1>
         <form
           id='form'
-          action='https://centurionsiteservices.com/webhook/form-mail/'
+          action='https://www.centurionsiteservices.com/webhook/form-mail/'
           method='post'
           className={styles.form}
           onSubmit={this.handleSubmit}
