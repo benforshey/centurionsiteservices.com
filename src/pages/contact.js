@@ -45,7 +45,7 @@ class Contact extends React.Component {
     e.preventDefault()
     e.stopPropagation()
 
-    fetch('https://messaging-server-khjoaaryks.now.sh/mail/', {
+    fetch('https://messaging-server-wzxfupsnma.now.sh/mail/', {
       method: 'post',
       body: new FormData(e.target)
     })
@@ -88,7 +88,7 @@ class Contact extends React.Component {
         <h1 className={styles.masthead}>Pricing<br /> and <br />Inquiries</h1>
         <form
           id='form'
-          action='https://messaging-server-khjoaaryks.now.sh/mail/'
+          action='https://messaging-server-wzxfupsnma.now.sh/mail/'
           method='post'
           className={styles.form}
           onSubmit={this.handleSubmit}
