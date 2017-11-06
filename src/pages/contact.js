@@ -50,7 +50,7 @@ class Contact extends React.Component {
       body: new FormData(e.target)
     })
     .then(response => {
-      this.setState({ feedback: 'Sending your message…' })
+      console.log(response)
 
       if (response.ok) {
         // Message was sent successfully, so clear the form.
