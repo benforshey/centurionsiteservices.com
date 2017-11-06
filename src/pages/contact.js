@@ -45,13 +45,15 @@ class Contact extends React.Component {
     e.preventDefault()
     e.stopPropagation()
 
-    fetch('https://www.centurionsiteservices.com/webhook/form-mail/', {
+    fetch('https://messaging-server-khjoaaryks.now.sh/mail/', {
       method: 'post',
       body: new FormData(e.target)
     })
     .then(response => {
-      this.setState({ feedback: 'Sending your message...' })
+      this.setState({ feedback: 'Sending your message&hellip;' })
+
       if (response.ok) {
+        // Message was sent successfully, so clear the form.
         this.setState({
           name: '',
           contact: '',
@@ -59,15 +61,19 @@ class Contact extends React.Component {
           message: '',
           feedback: 'Your message has been sent!'
         })
-
+        // Message was sent successfully, so clear the success message.
         setTimeout(() => {
           this.setState({ feedback: '' })
         }, 3000)
       }
+      // The message is in limbo.
+      setTimeout(() => {
+        this.setState({ feedback: `Sorry, but it looks like your message hasn&rsquo;t sent yet. This could mean that the connection between you and our server is slow (maybe you&rsquo;re offline?), or it could be that we&rsquo;re having some serious problems. If this message doesn't go away, please reach out to us using the information at the bottom of this page.` })
+      }, 3000)
     })
     .catch(err => {
       this.setState({
-        feedback: `Sorry, we're having trouble sending your message. Please try again later or call us using the information at the bottom of the page. Please tell us about your error, which was: ${err}`
+        feedback: `Sorry, we&rsquo;re could&rsquo;t send your message because of the following error: ${err}. We&rsquo;re really friendly people, so please reach out to us using the information at the bottom of this page.`
       })
     })
   }
@@ -82,7 +88,7 @@ class Contact extends React.Component {
         <h1 className={styles.masthead}>Pricing<br /> and <br />Inquiries</h1>
         <form
           id='form'
-          action='https://www.centurionsiteservices.com/webhook/form-mail/'
+          action='https://messaging-server-khjoaaryks.now.sh/mail/'
           method='post'
           className={styles.form}
           onSubmit={this.handleSubmit}
@@ -109,7 +115,7 @@ class Contact extends React.Component {
           </p>
           <Button type='submit' form='form' text='Send Message' />
           {this.state.feedback ? (
-            <p>{this.state.feedback}</p>
+            <p dangerouslySetInnerHTML={this.state.feedback} />
           ) : (
             ''
           )}
