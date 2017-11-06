@@ -62,18 +62,19 @@ class Contact extends React.Component {
           feedback: 'Your message has been sent!'
         })
         // Message was sent successfully, so clear the success message.
-        setTimeout(() => {
+        return setTimeout(() => {
           this.setState({ feedback: '' })
         }, 3000)
+      } else {
+        // The message is in limbo.
+        return setTimeout(() => {
+          this.setState({ feedback: `Sorry, but it looks like your message hasn’t sent yet. This could mean that the connection between you and our server is slow (maybe you’re offline?), or it could be that we’re having some serious problems. If this message doesn't go away, please reach out to us using the information at the bottom of this page.` })
+        }, 3000)
       }
-      // The message is in limbo.
-      setTimeout(() => {
-        this.setState({ feedback: `Sorry, but it looks like your message hasn’t sent yet. This could mean that the connection between you and our server is slow (maybe you’re offline?), or it could be that we’re having some serious problems. If this message doesn't go away, please reach out to us using the information at the bottom of this page.` })
-      }, 3000)
     })
     .catch(err => {
       this.setState({
-        feedback: `Sorry, we’re could’t send your message because of the following error: ${err}. We’re really friendly people, so please reach out to us using the information at the bottom of this page.`
+        feedback: `Sorry, we could’t send your message because of the following error: ${err}. Please reach out to us using the information at the bottom of this page.`
       })
     })
   }
