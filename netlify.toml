@@ -2,8 +2,3 @@
     NODE_VERSION = "8.6.0"
 [context.production.environment]
     NODE_VERSION = "8.6.0"
-
-[[redirects]]
-    from = "/webhook/form-mail/"
-    to = "http://138.197.224.215:3025/mail/"
-    status = 200
