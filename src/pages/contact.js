@@ -50,7 +50,7 @@ class Contact extends React.Component {
       body: new FormData(e.target)
     })
     .then(response => {
-      this.setState({ feedback: 'Sending your message&hellip;' })
+      this.setState({ feedback: 'Sending your message…' })
 
       if (response.ok) {
         // Message was sent successfully, so clear the form.
@@ -68,12 +68,12 @@ class Contact extends React.Component {
       }
       // The message is in limbo.
       setTimeout(() => {
-        this.setState({ feedback: `Sorry, but it looks like your message hasn&rsquo;t sent yet. This could mean that the connection between you and our server is slow (maybe you&rsquo;re offline?), or it could be that we&rsquo;re having some serious problems. If this message doesn't go away, please reach out to us using the information at the bottom of this page.` })
+        this.setState({ feedback: `Sorry, but it looks like your message hasn’t sent yet. This could mean that the connection between you and our server is slow (maybe you’re offline?), or it could be that we’re having some serious problems. If this message doesn't go away, please reach out to us using the information at the bottom of this page.` })
       }, 3000)
     })
     .catch(err => {
       this.setState({
-        feedback: `Sorry, we&rsquo;re could&rsquo;t send your message because of the following error: ${err}. We&rsquo;re really friendly people, so please reach out to us using the information at the bottom of this page.`
+        feedback: `Sorry, we’re could’t send your message because of the following error: ${err}. We’re really friendly people, so please reach out to us using the information at the bottom of this page.`
       })
     })
   }
@@ -115,7 +115,7 @@ class Contact extends React.Component {
           </p>
           <Button type='submit' form='form' text='Send Message' />
           {this.state.feedback ? (
-            <p dangerouslySetInnerHTML={this.state.feedback} />
+            <p>{this.state.feedback}</p>
           ) : (
             ''
           )}
