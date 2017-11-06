@@ -45,7 +45,7 @@ class Contact extends React.Component {
     e.preventDefault()
     e.stopPropagation()
 
-    fetch('https://messaging-server-wzxfupsnma.now.sh/mail/', {
+    fetch('https://messaging-server-sgcvhtmmpt.now.sh/mail/', {
       method: 'post',
       body: new FormData(e.target)
     })
@@ -73,7 +73,7 @@ class Contact extends React.Component {
     })
     .catch(err => {
       this.setState({
-        feedback: `Sorry, we could’t send your message because of the following error: ${err}. Please reach out to us using the information at the bottom of this page.`
+        feedback: `Sorry, we could’t send your message because of the following error: ${err}. Please reach us using the information at the bottom of this page.`
       })
     })
   }
@@ -88,7 +88,7 @@ class Contact extends React.Component {
         <h1 className={styles.masthead}>Pricing<br /> and <br />Inquiries</h1>
         <form
           id='form'
-          action='https://messaging-server-wzxfupsnma.now.sh/mail/'
+          action='https://messaging-server-sgcvhtmmpt.now.sh/mail/'
           method='post'
           className={styles.form}
           onSubmit={this.handleSubmit}
