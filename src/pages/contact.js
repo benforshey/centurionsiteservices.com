@@ -47,7 +47,7 @@ class Contact extends React.Component {
 
     this.setState({ feedback: 'Sending your message…' })
 
-    fetch('https://messaging-server-pwzowdvvuc.now.sh/mail/', {
+    fetch('https://form.centurionsiteservices.com/mail/', {
       method: 'post',
       body: new FormData(e.target)
     })
@@ -87,7 +87,7 @@ class Contact extends React.Component {
         <h1 className={styles.masthead}>Pricing<br /> and <br />Inquiries</h1>
         <form
           id='form'
-          action='https://messaging-server-pwzowdvvuc.now.sh/mail/'
+          action='https://form.centurionsiteservices.com/mail/'
           method='post'
           className={styles.form}
           onSubmit={this.handleSubmit}
